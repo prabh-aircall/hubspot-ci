@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const base_url = 'https://hubspot-ci.herokuapp.com/';
+const base_url = "https://hubspot-ci.herokuapp.com";
 
 app.get("/recordings/:externalId", (req, res) => {
   const { appId, externalAccountId } = req.query;
