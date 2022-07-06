@@ -7,6 +7,7 @@ app.get("/recordings/:externalId", (req, res) => {
   const { appId, externalAccountId } = req.query;
   const { externalId } = req.params;
   console.info({ appId, externalAccountId, externalId });
+  console.info({ headers: JSON.stringify(req.headers) });
   res.send({
     authenticatedUrl: `${base_url}/audio/${externalId}`,
   });
