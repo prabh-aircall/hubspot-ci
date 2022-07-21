@@ -13,7 +13,7 @@ app.get("/recordings/:externalId", (req, res) => {
   });
 });
 
-app.use("/audio/:externalId", express.static("sample.mp3"));
+app.use("/audio/:externalId", express.static("sample1.mp3"));
 
 // This displays message that the server running and listening to specified port
 app.listen(process.env.PORT || port, () =>
