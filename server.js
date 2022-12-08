@@ -1,9 +1,14 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+// create application/json parser
+const jsonParser = bodyParser.json();
+ 
+
 const base_url = "https://hubspot-ci.herokuapp.com";
 
-app.post('/api/users', (req, res) => {
+app.post('/api/users', jsonParser, (req, res) => {
     console.info({ req: '/api/users', body: req.body, params: req.params, headers: JSON.stringify(req.headers) });
     console.info({ req: JSON.stringify(req.body)});
     console.info({ req: JSON.stringify(req.params)});
