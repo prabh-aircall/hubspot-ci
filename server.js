@@ -19,7 +19,7 @@ app.post('/api/users', function (req, res) {
     let body = req.body;
     let params = req.params;
     console.info({ req: '/api/users', body, params, headers: JSON.stringify(req.headers) });
-    console.log({ req: JSON.stringify(req)});
+    console.info({ req: JSON.stringify(req)});
     return res.send('Successful post request');
 });
 
