@@ -15,6 +15,13 @@ app.get("/recordings/:externalId", (req, res) => {
 
 app.use("/audio/:externalId", express.static("sample1.mp3"));
 
+app.post('/api/users', function (req, res) {
+    let body = req.body;
+    let params = req.params;
+    console.info({ req: '/api/users', body, params, headers: JSON.stringify(req.headers) });
+    return res.send('Successful post request');
+});
+
 // This displays message that the server running and listening to specified port
 app.listen(process.env.PORT || port, () =>
   console.log(`Listening on port ${port}`)
