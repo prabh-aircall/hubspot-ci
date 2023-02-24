@@ -25,6 +25,11 @@ app.get("/recordings/:externalId", (req, res) => {
 
 app.use("/audio/:externalId", express.static("sample1.mp3"));
 
+app.post('/api/workflow-ext', jsonParser, (req, res) => {
+    console.info({ req: '/api/workflow-ext', body: req.body, params: req.params, headers: JSON.stringify(req.headers) });
+    return res.send('Successful post request');
+});
+
 
 
 // This displays message that the server running and listening to specified port
